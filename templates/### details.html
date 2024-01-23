@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ video.title }}</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Video Player</h1>
+</header>
+
+<main>
+<div class="video-details">
+<div class="video-player">
+<video controls>
+<source src="{{ url_for('play_video', video_id=video.id) }}" type="video/mp4">
+</video>
+</div>
+
+<div class="video-info">
+<h2>{{ video.title }}</h2>
+<p>{{ video.description }}</p>
+<p>Duration: {{ video.duration }}</p>
+</div>
+</div>
+</main>
+
+<footer>
+Copyright &copy; 2023 Video Player
+</footer>
+</body>
+</html>
+
+
+### style.css
+css
+/* Reset styles */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Header styles */
+
+header {
+background-color: #333;
+color: #fff;
+padding: 10px;
+}
+
+header h1 {
+font-size: 24px;
+}
+
+/* Main styles */
+
+main {
+padding: 10px;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 10px;
+}
+
+.video-item {
+border: 1px solid #ccc;
+padding: 10px;
+text-align: center;
+}
+
+.video-item img {
+width: 100%;
+}
+
+.video-title {
+font-size: 18px;
+margin-top: 5px;
+}
+
+.video-description {
+font-size: 14px;
+margin-top: 5px;
+}
+
+/* Details page styles */
+
+.video-details {
+display: flex;
+justify-content: space-between;
+}
+
+.video-player {
+width: 60%;
+}
+
+.video-info {
+padding: 10px;
+}
+
+.video-info h2 {
+font-size: 24px;
+}
+
+.video-info p {
+font-size: 14px;
+}
+
+/* Footer styles */
+
+footer {
+background-color: #333;
+color: #fff;
+padding: 10px;
+text-align: center;
+}
+
